@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*- 
 from django.contrib import admin
+from django.utils.safestring import mark_safe
+
 from .models import Village, Plot, Shreni
 from django.http import HttpResponse
 
@@ -36,7 +37,16 @@ class PlotAdmin(admin.ModelAdmin):
                     ]
     list_filter = ['connectivity', 'allotted', 'shreni']
     search_fields = ['village__name', 'gata_number']
-    readonly_fields = ['shreni_desc']
+    readonly_fields = ['shreni_desc', 'image_view']
+
+    def image_view(self, obj):
+        return mark_safe('<img src="{url}" width="{width}" height={height} />'.format(
+            url=obj.image.url,
+            width=obj.image.width,
+            height=obj.image.height,
+            )
+        )
+
 
     def download_csv(self, request, queryset):
 

@@ -25,7 +25,7 @@ SECRET_KEY = '0^a==10tueoxw0-s+wj4m-8@)(3c5n94oz()kkqzx4ah*c*2rf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://139.59.43.184', '139.59.43.184']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000/','https://139.59.43.184', '139.59.43.184']
 
 
 # Application definition
@@ -102,6 +102,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # Allow Django from all hosts. This snippet is installed from
 # /var/lib/digitalocean/allow_hosts.py
