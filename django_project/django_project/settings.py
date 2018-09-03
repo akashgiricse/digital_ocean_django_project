@@ -25,7 +25,7 @@ SECRET_KEY = '0^a==10tueoxw0-s+wj4m-8@)(3c5n94oz()kkqzx4ah*c*2rf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://139.59.43.184', '139.59.43.184']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'plot',
 )
 
 MIDDLEWARE_CLASSES = (
